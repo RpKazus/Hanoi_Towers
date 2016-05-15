@@ -296,7 +296,7 @@
             this.pictureBox8.BackColor = System.Drawing.Color.Red;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox8.Location = new System.Drawing.Point(116, 226);
+            this.pictureBox8.Location = new System.Drawing.Point(114, 226);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(85, 26);
             this.pictureBox8.TabIndex = 7;
