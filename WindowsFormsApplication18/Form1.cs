@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace WindowsFormsApplication18
 {
     public partial class Form1 : Form
     {
+        int DvigPic = -1;
         Control lastParent;
         Point pOffset = new Point(-1, -1);
         Dictionary<int, int> answers = new Dictionary<int,int>();
         Dictionary<int, int> Nologics = new Dictionary<int, int>();
+        Dictionary<int, int> Yeslogics = new Dictionary<int, int>();
+        Dictionary<Control, int> Towers = new Dictionary<Control, int>();
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +32,13 @@ namespace WindowsFormsApplication18
             answers.Add(8, 255);
             Nologics.Add(1, 2);
             Nologics.Add(2, 3);
+            Nologics.Add(3, 1);
+            Yeslogics.Add(1, 3);
+            Yeslogics.Add(2, 1);
+            Yeslogics.Add(3, 2);
+            Towers.Add(st1, 1);
+            Towers.Add(st2, 2);
+            Towers.Add(st3, 3);
         }
         PictureBox[] pictureList;
         int step = 0;
@@ -43,18 +54,21 @@ namespace WindowsFormsApplication18
             button1.Click += Beginning;
             button1.Click -= button1_Click;
         }
-        private void SetPir(int count, int from, int to)
+        private void Move(int pic)
+        {
+            DvigPic = pic;
+        }
+        private void SetPir(int count)
         {
             if (count == 1)
+                Move((int)numericUpDown1.Value - count);
+            else
             {
-
-                for (int i = (int)numericUpDown1.Value - 1; i >= numericUpDown1.Value - count; i--)
-                {
-
-                }
+                SetPir(count - 1);
+                Move((int)numericUpDown1.Value - count);
+                SetPir(count - 1);
             }
-            else if(count % 2 == 0)
-                SetPir(count - 1, from, to);
+            this.Update();
         }
         private void SomeButton_MouseDown(object sender, EventArgs e)
         {
@@ -102,6 +116,14 @@ namespace WindowsFormsApplication18
         {
             if(MessageBox.Show("Сдаться", "Вы точно хотите сдаться?", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
+                numericUpDown1_ValueChanged(sender, e);
+                SetPir((int)numericUpDown1.Value);
+                
+            }
+        }
+        private void EndingEnd(object sender, EventArgs e)
+        {
+            System.Threading.Thread.Sleep(1000);
                 label15.Text = "Макс. число ходов:";
                 label14.Text = "255";
                 button1.MouseEnter -= button1_MouseEnter;
@@ -117,7 +139,6 @@ namespace WindowsFormsApplication18
                 this.button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 255, 128);
                 panel1.Enabled = false;
                 numericUpDown1_ValueChanged(sender, e);
-            }
         }
         public void Ending()
         {
@@ -161,6 +182,29 @@ namespace WindowsFormsApplication18
                 panel1.Location = new Point(panel1.Location.X + 1, panel1.Location.Y);
                 if (panel1.Location.X % 2 == 0)
                     panel2.Location = new Point(panel2.Location.X + 1, panel2.Location.Y);
+            }
+            if (DvigPic != -1)
+            {
+                do
+                {
+                    pictureList[DvigPic].Location = new Point(pictureList[DvigPic].Location.X, pictureList[DvigPic].Location.Y - 1);
+                    this.Update();
+                    System.Threading.Thread.Sleep(1);
+                }
+                while (pictureList[DvigPic].Location.Y > -40);
+                pictureList[DvigPic].Location = (DvigPic % 2 == 0) ? new Point(Yeslogics[Towers[pictureList[DvigPic].Parent]] * 350, pictureList[DvigPic].Location.Y) : new Point(Nologics[Towers[pictureList[DvigPic].Parent]] * 350, pictureList[DvigPic].Location.Y);
+                Set(pictureList[DvigPic]);
+                int height = pictureList[DvigPic].Location.Y;
+                pictureList[DvigPic].Location = new Point(pictureList[DvigPic].Location.X, -40);
+                do
+                {
+                    pictureList[DvigPic].Location = new Point(pictureList[DvigPic].Location.X, pictureList[DvigPic].Location.Y + 1);
+                    this.Update();
+                    System.Threading.Thread.Sleep(1);
+                }
+                while (pictureList[DvigPic].Location.Y < height);
+                DvigPic = -1;
+                EndingEnd(sender, e);
             }
         }
 
@@ -229,7 +273,7 @@ namespace WindowsFormsApplication18
         public void Set(PictureBox pic)
         {
             label14.Text = (Convert.ToInt32(label14.Text) + 1).ToString();
-            if (pic.Parent == this)
+            //if (pic.Parent == this)
                 if (pic.Location.X < 634 && st1.Controls[st1.Controls.Count - 1].Width >= pic.Width)
                     pic.Parent = st1;
                 else if (pic.Location.X >= 634 && pic.Location.X < 938 && st2.Controls[st2.Controls.Count - 1].Width >= pic.Width)

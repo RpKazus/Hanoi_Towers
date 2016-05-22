@@ -42,8 +42,6 @@
             this.Moving = new System.Windows.Forms.Timer(this.components);
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
-=======
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -51,13 +49,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
->>>>>>> origin/master
             this.st3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.st2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.st1 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -81,7 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-=======
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -113,7 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
->>>>>>> origin/master
+
             this.SuspendLayout();
             // 
             // button1
@@ -144,11 +139,11 @@
             this.OptionsPanel.Controls.Add(this.label2);
             this.OptionsPanel.Controls.Add(this.numericUpDown1);
             this.OptionsPanel.Controls.Add(this.label1);
-<<<<<<< HEAD
+
             this.OptionsPanel.Location = new System.Drawing.Point(-320, 70);
-=======
+
             this.OptionsPanel.Location = new System.Drawing.Point(-326, 70);
->>>>>>> origin/master
+
             this.OptionsPanel.Name = "OptionsPanel";
             this.OptionsPanel.Size = new System.Drawing.Size(313, 886);
             this.OptionsPanel.TabIndex = 2;
@@ -279,7 +274,7 @@
             this.panel1.Size = new System.Drawing.Size(914, 886);
             this.panel1.TabIndex = 0;
             // 
-<<<<<<< HEAD
+
             // st3
             // 
             this.st3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("st3.BackgroundImage")));
@@ -352,7 +347,7 @@
             this.pictureBox8.Size = new System.Drawing.Size(85, 26);
             this.pictureBox8.TabIndex = 7;
             this.pictureBox8.TabStop = false;
-=======
+
             // label12
             // 
             this.label12.AutoSize = true;
@@ -518,7 +513,7 @@
             this.label13.TabIndex = 6;
             this.label13.Text = "Ханойская башня";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
->>>>>>> origin/master
+
             // 
             // label6
             // 
@@ -542,7 +537,7 @@
             this.pictureBox7.Size = new System.Drawing.Size(140, 50);
             this.pictureBox7.TabIndex = 6;
             this.pictureBox7.TabStop = false;
-<<<<<<< HEAD
+
             // 
             // pictureBox1
             // 
@@ -565,11 +560,11 @@
             this.pictureBox6.Size = new System.Drawing.Size(130, 39);
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
-=======
+
             this.pictureBox7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SomeButton_MouseDown);
             this.pictureBox7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SomeButton_MouseMove);
             this.pictureBox7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SomeButton_MouseUp);
->>>>>>> origin/master
+
             // 
             // pictureBox2
             // 
@@ -596,7 +591,7 @@
             this.pictureBox5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.SomeButton_MouseMove);
             this.pictureBox5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SomeButton_MouseUp);
             // 
-<<<<<<< HEAD
+
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Yellow;
@@ -618,7 +613,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(172, 50);
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
-=======
+
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Lime;
@@ -744,7 +739,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "СПРАВОЧКА";
             this.button2.UseVisualStyleBackColor = true;
->>>>>>> origin/master
+
             // 
             // Form1
             // 
@@ -773,18 +768,18 @@
             this.OptionsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel1.ResumeLayout(false);
-<<<<<<< HEAD
-=======
+
+
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
->>>>>>> origin/master
+
             this.st3.ResumeLayout(false);
             this.st3.PerformLayout();
             this.st2.ResumeLayout(false);
             this.st2.PerformLayout();
             this.st1.ResumeLayout(false);
             this.st1.PerformLayout();
-<<<<<<< HEAD
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -793,7 +788,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-=======
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -804,7 +799,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
->>>>>>> origin/master
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
